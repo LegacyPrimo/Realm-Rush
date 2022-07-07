@@ -32,9 +32,12 @@ public class EnemyMovement : MonoBehaviour
         foreach (Transform child in parent.transform) 
         {
             Waypoint waypoint = child.GetComponent<Waypoint>();
+
+            if (waypoint != null) 
+            {
+                enemyPath.Add(waypoint);
+            }
             
-            if (waypoint != null)
-            enemyPath.Add(waypoint);
         }
     }
 
